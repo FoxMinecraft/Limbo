@@ -154,16 +154,16 @@ public class LimboScheduler {
 			}
 			
 			switch (task.getType()) {
-			case ASYNC:
-				asyncTasks.add(task);
-				break;
-			case SYNC:
-				syncedTasks.add(task);
-				break;
-			case TIMER_ASYNC:
-				asyncTasks.add(task);
-				runTaskTimerAsync(task.getTaskId(), task.getPlugin(), task.getTask(), task.getPeriod(), task.getPeriod());
-				break;
+				case ASYNC:
+					asyncTasks.add(task);
+					break;
+				case SYNC:
+					syncedTasks.add(task);
+					break;
+				case TIMER_ASYNC:
+					asyncTasks.add(task);
+					runTaskTimerAsync(task.getTaskId(), task.getPlugin(), task.getTask(), task.getPeriod(), task.getPeriod());
+					break;
 				case TIMER_SYNC:
 					syncedTasks.add(task);
 					runTaskTimer(task.getTaskId(), task.getPlugin(), task.getTask(), task.getPeriod(), task.getPeriod());

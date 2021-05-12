@@ -261,6 +261,7 @@ public enum EntityType {
     /**
      * A bolt of lightning.
      * <p>
+     *
      */
     //LIGHTNING("lightning_bolt", LightningStrike.class, -1, false),
     PLAYER("player", Player.class, 106, false),
@@ -379,7 +380,9 @@ public enum EntityType {
     }
 
     /**
-     * Some entities cannot be spawned
+     * Some entities cannot be spawned using
+     * <p>
+     * information in order to spawn.
      *
      * @return False if the entity type cannot be spawned
      */

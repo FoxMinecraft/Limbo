@@ -1,4 +1,4 @@
-package com.loohp.limbo.events.Status;
+package com.loohp.limbo.events.status;
 
 import com.loohp.limbo.events.Event;
 import com.loohp.limbo.server.ClientConnection;

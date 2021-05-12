@@ -1,7 +1,7 @@
 package com.loohp.limbo;
 
 import com.loohp.limbo.commands.CommandSender;
-import com.loohp.limbo.gui.ConsoleTextOutput;
+import com.loohp.limbo.consolegui.ConsoleTextOutput;
 import com.loohp.limbo.utils.CustomStringUtils;
 import jline.console.ConsoleReader;
 import net.md_5.bungee.api.ChatColor;

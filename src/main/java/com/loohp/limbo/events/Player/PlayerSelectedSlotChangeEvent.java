@@ -1,4 +1,4 @@
-package com.loohp.limbo.events.Player;
+package com.loohp.limbo.events.player;
 
 import com.loohp.limbo.events.Cancellable;
 import com.loohp.limbo.player.Player;

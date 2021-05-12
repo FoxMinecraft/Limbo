@@ -13,45 +13,45 @@ import java.nio.file.Files;
 
 public class DimensionRegistry {
 
-    private final File reg;
-    private CompoundTag defaultTag;
-    private CompoundTag codec;
+	private final File reg;
+	private CompoundTag defaultTag;
+	private CompoundTag codec;
 
-    public DimensionRegistry() {
-        this.defaultTag = new CompoundTag();
+	public DimensionRegistry() {
+		this.defaultTag = new CompoundTag();
 
-        String name = "dimension_registry.json";
-        File file = new File(Limbo.getInstance().getInternalDataFolder(), name);
-        if (!file.exists()) {
-            try (InputStream in = Limbo.class.getClassLoader().getResourceAsStream(name)) {
-                Files.copy(in, file.toPath());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+		String name = "dimension_registry.json";
+		File file = new File(Limbo.getInstance().getInternalDataFolder(), name);
+		if (!file.exists()) {
+			try (InputStream in = Limbo.class.getClassLoader().getResourceAsStream(name)) {
+				Files.copy(in, file.toPath());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 
-        this.reg = file;
+		this.reg = file;
 
-        try (InputStreamReader reader = new InputStreamReader(new FileInputStream(reg), StandardCharsets.UTF_8)) {
-            JSONObject json = (JSONObject) new JSONParser().parse(reader);
-            CompoundTag tag = CustomNBTUtils.getCompoundTagFromJson((JSONObject) json.get("value"));
-            defaultTag = tag;
-            codec = defaultTag.clone();
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
-    }
+		try (InputStreamReader reader = new InputStreamReader(new FileInputStream(reg), StandardCharsets.UTF_8)) {
+			JSONObject json = (JSONObject) new JSONParser().parse(reader);
+			CompoundTag tag = CustomNBTUtils.getCompoundTagFromJson((JSONObject) json.get("value"));
+			defaultTag = tag;
+			codec = defaultTag.clone();
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+	}
 
-    public File getFile() {
-        return reg;
-    }
+	public File getFile() {
+		return reg;
+	}
 
-    public void resetCodec() {
-        codec = defaultTag.clone();
-    }
+	public void resetCodec() {
+		codec = defaultTag.clone();
+	}
 
-    public CompoundTag getCodec() {
-        return codec;
-    }
+	public CompoundTag getCodec() {
+		return codec;
+	}
 
 }

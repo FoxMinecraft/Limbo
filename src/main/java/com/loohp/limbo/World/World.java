@@ -28,8 +28,8 @@ public class World {
 	private final int width;
 	private final int length;
 	private final LightEngineBlock lightEngineBlock;
-	private final Map<Entity, DataWatcher> entities;
 	private LightEngineSky lightEngineSky;
+	private final Map<Entity, DataWatcher> entities;
 
 	public World(String name, int width, int length, Environment environment) {
 		this.name = name;
